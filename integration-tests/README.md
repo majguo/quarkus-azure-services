@@ -60,20 +60,31 @@ az storage account create \
     --sku Standard_LRS \
     --kind StorageV2
 
-export QUARKUS_AZURE_STORAGE_BLOB_CONNECTION_STRING=$(az storage account show-connection-string \
+export QUARKUS_AZURE_STORAGE_CONNECTION_STRING=$(az storage account show-connection-string \
     --resource-group ${RESOURCE_GROUP_NAME} \
     --name ${STORAGE_ACCOUNT_NAME} \
     --query connectionString -o tsv)
+
+export QUARKUS_AZURE_STORAGE_BLOB_CONNECTION_STRING=${QUARKUS_AZURE_STORAGE_CONNECTION_STRING}"
+export QUARKUS_AZURE_STORAGE_QUEUE_CONNECTION_STRING=${QUARKUS_AZURE_STORAGE_CONNECTION_STRING}"
+
 echo "The value of 'quarkus.azure.storage.blob.connection-string' is: ${QUARKUS_AZURE_STORAGE_BLOB_CONNECTION_STRING}"
+echo "The value of 'quarkus.azure.storage.queue.connection-string' is: ${QUARKUS_AZURE_STORAGE_QUEUE_CONNECTION_STRING}"
 ```
 
-The value of environment variable `QUARKUS_AZURE_STORAGE_BLOB_CONNECTION_STRING` will be fed into config
-property `quarkus.azure.storage.blob.connection-string` of `azure-storage-blob` extension in order to set up the
-connection to the Azure Storage Account.
+The value of environment variables:
+* `QUARKUS_AZURE_STORAGE_BLOB_CONNECTION_STRING`, and
+* `QUARKUS_AZURE_STORAGE_QUEUE_CONNECTION_STRING`
+Will be fed into configuration strings:
+* `quarkus.azure.storage.blob.connection-string`, and
+* `quarkus.azure.storage.queue.connection-string`
+Of `azure-storage-blob` extension in order to set up the connection to the Azure Storage Account.
 
-You can also manually copy the output of the variable `quarkus.azure.storage.blob.connection-string` and then
-update [application.properties](azure-storage-blob/src/main/resources/application.properties) by uncommenting the
-same property and setting copied value.
+Please note that in general these connections strings are identical, but first
+one is for the blob extension, and the second one is for the queue extension.
+
+You can also manually copy the output of the variable `quarkus.azure.storage.blob.connection-string`
+and then update [application.properties](azure-storage-blob/src/main/resources/application.properties) by uncommenting the same property and setting copied value.
 
 ### Creating Azure App Configuration
 

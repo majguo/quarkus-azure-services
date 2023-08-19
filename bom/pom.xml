@@ -117,6 +117,16 @@
                 <artifactId>quarkus-azure-storage-blob-deployment</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.quarkiverse.azureservices</groupId>
+                <artifactId>quarkus-azure-storage-queue</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.quarkiverse.azureservices</groupId>
+                <artifactId>quarkus-azure-storage-queue-deployment</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

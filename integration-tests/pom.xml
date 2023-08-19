@@ -16,6 +16,7 @@
     <modules>
         <module>azure-app-configuration</module>
         <module>azure-storage-blob</module>
+        <module>azure-storage-queue</module>
     </modules>
 
 </project>

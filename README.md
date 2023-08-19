@@ -16,9 +16,14 @@ The following extensions allows you to interact with some of the Azure Services:
 
 - [Quarkus Azure App Configuration Extension](https://docs.quarkiverse.io/quarkus-azure-services/dev/quarkus-azure-app-configuration.html): [Azure App Configuration](https://azure.microsoft.com/products/app-configuration)
   is a fast, scalable parameter storage for app configuration.
-- [Quarkus Azure Blob Storage Extension](https://docs.quarkiverse.io/quarkus-azure-services/dev/quarkus-azure-storage-blob.html): [Azure Blob Storage](https://azure.microsoft.com/products/storage/blobs/)
+- [Quarkus Azure Storage Blob Extension](https://docs.quarkiverse.io/quarkus-azure-services/dev/quarkus-azure-storage-blob.html):
+  [Azure Storage Blob](https://azure.microsoft.com/products/storage/blobs/)
   is a massively scalable and secure object storage for cloud-native workloads, archives, data lakes, high-performance
   computing, and machine learning.
+- [Quarkus Azure Storage Queue Extension](https://docs.quarkiverse.io/quarkus-azure-services/dev/quarkus-azure-storage-queue.html):
+  [Azure Storage Queue](https://azure.microsoft.com/products/storage/blobs/)
+  is a durable queue for large-volume cloud services providing an ability to asynchronously communicate between different
+  application components and a simple and reliable way to exchange messages between different parts of a distributed systems.
 
 ## Example applications
 
@@ -26,8 +31,10 @@ Example applications can be found inside the [integration-tests](integration-tes
 
 - [Azure App Configuration sample](integration-tests/azure-app-configuration): REST endpoint using the Quarkus extension
   to get the configuration stored in Azure App Configuration.
-- [Azure Blob Storage sample](integration-tests/azure-storage-blob): REST endpoint using the Quarkus extension to
-  upload and download files to/from Azure Blob Storage.
+- [Azure Storage Blob sample](integration-tests/azure-storage-blob): REST endpoint using the Quarkus extension to
+  upload and download files to/from Azure Storage Blob.
+- [Azure Storage Queue sample](integration-tests/azure-storage-queue): REST endpoint using the Quarkus extension to
+  post and receive messages to/from Azure Storage Queue.
 
 ## How to release a new version
 
