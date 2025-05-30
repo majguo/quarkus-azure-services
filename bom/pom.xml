@@ -177,6 +177,16 @@
                 <artifactId>quarkus-azure-storage-blob-deployment</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.quarkiverse.azureservices</groupId>
+                <artifactId>quarkus-azure-jdbc-postgresql</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.quarkiverse.azureservices</groupId>
+                <artifactId>quarkus-azure-jdbc-postgresql-deployment</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!-- Dependencies for testing -->
             <dependency>
                 <groupId>org.assertj</groupId>
